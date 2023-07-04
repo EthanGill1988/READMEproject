@@ -40,3 +40,5 @@ function init() {
 
   writeToFile(fileName, data);
 }
+
+init();
