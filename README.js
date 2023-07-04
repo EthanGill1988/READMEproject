@@ -1,44 +1,41 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const questions = [
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log('README file created successfully!');
+    });
+  }
+
+  function init() {
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What is your name?',
+    },
     {
         type: 'input',
-        name: 'name',
-        message: 'What is your name?',
+        name: 'Description',
+        message: 'Provide a Description of your Application',
       },
-      {
-        type: 'checkbox',
-        message: 'What languages do you know?',
-        name: 'stack',
-        choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-      },
-      {
-        type: 'list',
-        message: 'What is your preferred method of communication?',
-        name: 'contact',
-        choices: ['email', 'phone', 'telekinesis'],
-      },
-];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, err => {
-    if(err) {
-      console.error.apply(err);
-      return;
-    }
-    console.log ("README file created successfully brah!");
+    {
+      type: 'list',
+      message: 'Select a Licence?',
+      name: 'license',
+      choices: ['sample1', 'sample2', 'sample3'],
+    },
+  ])
+  .then((data) => {
+    const fileName = 'README.md';
+    const readmeContent = generateReadmeContent(data);
+    writeToFile(fileName, readmeContent);
   });
-    
-}
+  }
 
-// TODO: Create a function to initialize app
-function init() {
-  const fileName = 'README.md';
-  const data = '# My project\n\nThis is a sample READMe file.';
 
-  writeToFile(fileName, data);
-}
-
-init();
