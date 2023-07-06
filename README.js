@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const badge = require('badge-maker');
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
@@ -21,7 +22,7 @@ inquirer
     },
     {
         type: 'input',
-        name: 'Description',
+        name: 'description',
         message: 'Provide a Description of your Application',
       },
     {
@@ -29,6 +30,10 @@ inquirer
       message: 'Select a Licence?',
       name: 'license',
       choices: ['sample1', 'sample2', 'sample3'],
+      label: 'build',
+      message: 'message',
+      labelColor: '#555',
+      color:'#4c1',
     },
   ])
   .then((data) => {
@@ -38,4 +43,16 @@ inquirer
   });
   }
 
+  function generateReadmeContent(data) {
+    const { name, description, license } = data;
+  
+    // Generate the README content based on the collected data
+    const readmeContent = `# ${name}\n\n` +
+      `## Description\n\n${description}\n\n` +
+      `## License\n\nThis application is licensed under the ${license} license.`;
+  
+    return readmeContent;
+  }
+  
+  init();
 
