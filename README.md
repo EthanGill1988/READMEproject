@@ -1,9 +1,27 @@
-# EZ
+# jlskdajf
 
 ## Description
 
-it blows goats so I don't have to
+lasdjf
 
 ## License
 
-This application is licensed under the sample2 license.
+![License](https://img.shields.io/badge/license-sample1-blue)
+
+This application is licensed under the sample1 license.
+
+## Installation
+
+lasdkjf
+
+## Usage
+
+lsadjf
+
+## Contribution Guidelines
+
+lsadjf
+
+## Test Instructions
+
+lasdj

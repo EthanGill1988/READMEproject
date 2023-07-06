@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const badge = require('badge-maker');
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
@@ -18,22 +17,38 @@ inquirer
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'What is the project title?',
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Provide a Description of your Application',
+        message: 'Provide a description of the application',
+      },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Provide installation instructions',
+      },
+      {
+        type: 'input',
+        name: 'usage',
+        message: 'Provide usage information',
+      },
+      {
+        type: 'input',
+        name: 'contributions',
+        message: 'Provide guidelines for contributions',
+      },
+      {
+        type: 'input',
+        name: 'testing',
+        message: 'Provide test instructions',
       },
     {
       type: 'list',
-      message: 'Select a Licence?',
+      message: 'Select a Licence',
       name: 'license',
       choices: ['sample1', 'sample2', 'sample3'],
-      label: 'build',
-      message: 'message',
-      labelColor: '#555',
-      color:'#4c1',
     },
   ])
   .then((data) => {
@@ -44,12 +59,21 @@ inquirer
   }
 
   function generateReadmeContent(data) {
-    const { name, description, license } = data;
+    const { name, description, license, installation, usage, contributions, testing } = data;
+
+     // Generate the badge markup based on the selected license
+     const licenseBadge = `![License](https://img.shields.io/badge/license-${license.replace(/ /g, '%20')}-blue)`;
+  
   
     // Generate the README content based on the collected data
     const readmeContent = `# ${name}\n\n` +
-      `## Description\n\n${description}\n\n` +
-      `## License\n\nThis application is licensed under the ${license} license.`;
+    `## Description\n\n${description}\n\n` +
+    `## License\n\n${licenseBadge}\n\n` +
+    `This application is licensed under the ${license} license.\n\n` +
+    `## Installation\n\n${installation}\n\n` +
+    `## Usage\n\n${usage}\n\n` +
+    `## Contribution Guidelines\n\n${contributions}\n\n` +
+    `## Test Instructions\n\n${testing}`;
   
     return readmeContent;
   }
