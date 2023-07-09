@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+//function to write collected data into specified file. 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
       if (err) {
@@ -10,7 +10,7 @@ function writeToFile(fileName, data) {
       console.log('README file created successfully!');
     });
   }
-
+//function to provide user with question prompts 
   function init() {
 inquirer
   .prompt([
