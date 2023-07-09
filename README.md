@@ -1,27 +1,27 @@
-# dickspooping
+# README project
 
 ## Description
 
-pooping dicks
+an application that writes user input data into your README
 
 ## License
 
-[![License](https://img.shields.io/badge/license-sample1-blue)](https://img.shields.io/badge/license-sample1-blue)
+[![License](https://img.shields.io/badge/license-sample2-blue)](https://img.shields.io/badge/license-sample2-blue)
 
-This application is licensed under the sample1 license.
+This application is licensed under the sample2 license.
 
 ## Installation
 
-poop out your dick
+just install it ding dong, lol
 
 ## Usage
 
-use your dick for pooping
+k
 
 ## Contribution Guidelines
 
-make poop come out your dick
+don't be mean to cats
 
 ## Test Instructions
 
-push real hard forward 
+if it works...it works
