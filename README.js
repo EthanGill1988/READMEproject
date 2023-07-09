@@ -62,18 +62,19 @@ inquirer
     const { name, description, license, installation, usage, contributions, testing } = data;
 
      // Generate the badge markup based on the selected license
-     const licenseBadge = `![License](https://img.shields.io/badge/license-${license.replace(/ /g, '%20')}-blue)`;
+     const licenseBadgeUrl = `https://img.shields.io/badge/license-${license.replace(/ /g, '%20')}-blue`;
   
   
     // Generate the README content based on the collected data
     const readmeContent = `# ${name}\n\n` +
     `## Description\n\n${description}\n\n` +
-    `## License\n\n${licenseBadge}\n\n` +
+    `## License\n\n[![License](${licenseBadgeUrl})](${licenseBadgeUrl})\n\n` +
     `This application is licensed under the ${license} license.\n\n` +
     `## Installation\n\n${installation}\n\n` +
     `## Usage\n\n${usage}\n\n` +
     `## Contribution Guidelines\n\n${contributions}\n\n` +
     `## Test Instructions\n\n${testing}`;
+
   
     return readmeContent;
   }

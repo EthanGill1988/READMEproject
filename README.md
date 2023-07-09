@@ -1,27 +1,27 @@
-# jlskdajf
+# dickspooping
 
 ## Description
 
-lasdjf
+pooping dicks
 
 ## License
 
-![License](https://img.shields.io/badge/license-sample1-blue)
+[![License](https://img.shields.io/badge/license-sample1-blue)](https://img.shields.io/badge/license-sample1-blue)
 
 This application is licensed under the sample1 license.
 
 ## Installation
 
-lasdkjf
+poop out your dick
 
 ## Usage
 
-lsadjf
+use your dick for pooping
 
 ## Contribution Guidelines
 
-lsadjf
+make poop come out your dick
 
 ## Test Instructions
 
-lasdj
+push real hard forward 
